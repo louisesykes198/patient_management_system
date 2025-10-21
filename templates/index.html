@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Appointments</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Patient</th>
+      <th>Doctor</th>
+      <th>Date</th>
+      <th>Notes</th>
+    </tr>
+    {% for a in appointments %}
+    <tr>
+      <td>{{ a.appointment_id }}</td>
+      <td>{{ a.patient }}</td>
+      <td>{{ a.doctor }}</td>
+      <td>{{ a.appointment_date }}</td>
+      <td>{{ a.notes }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
